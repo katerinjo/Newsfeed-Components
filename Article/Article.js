@@ -123,10 +123,14 @@ function expandable(data) {
   const expand = document.createElement('span')
 
   outermost.classList.add('article')
-  date.classList.add('date')
+  dateElement.classList.add('date')
   expand.classList.add('expandButton')
 
   titleElement.textContent = data.title
+  dateElement.textContent = data.date
+  firstP.textContent = data.firstParagraph
+  secondP.textContent = data.secondParagraph
+  thirdP.textContent = data.thirdParagraph
 
   [titleElement, dateElement, firstP, secondP, thirdP, expand].forEach(elem => {
     outermost.appendChild(elem)
