@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Small packages come to those who wait.',
+    date: 'July 10th, 2019',
+    firstParagraph: `It matters not how strait the gait, how charged with punishments the scroll. I am the very model of a modern major general.`,
+
+    secondParagraph: ` Fool me once, shame on me. Teach a man to fool me, and I'll be fooled for the rest of my life.`,
+
+    thirdParagraph: `You opened this can of worms, now lie in it!`
   }
 ];
 
