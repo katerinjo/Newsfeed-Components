@@ -131,7 +131,8 @@ function expandable(data) {
   firstP.textContent = data.firstParagraph
   secondP.textContent = data.secondParagraph
   thirdP.textContent = data.thirdParagraph
-
+  expand.textContent = "TOGGLE"
+    ;
   [titleElement, dateElement, firstP, secondP, thirdP, expand].forEach(elem => {
     outermost.appendChild(elem)
   })
@@ -142,3 +143,9 @@ function expandable(data) {
 
   return outermost
 }
+
+const targetElement = document.querySelector('.articles')
+
+data.forEach(articleData => {
+  targetElement.appendChild(expandable(articleData))
+})
