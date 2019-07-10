@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Small packages come to those who wait.',
+    date: 'July 10th, 2019',
+    firstParagraph: `It matters not how strait the gait, how charged with punishments the scroll. I am the very model of a modern major general.`,
+
+    secondParagraph: ` Fool me once, shame on me. Teach a man to fool me, and I'll be fooled for the rest of my life.`,
+
+    thirdParagraph: `You opened this can of worms, now lie in it!`
   }
 ];
 
@@ -112,3 +121,40 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+
+function expandable(data) {
+  const outermost = document.createElement('div')
+  const titleElement = document.createElement('h2')
+  const dateElement = document.createElement('p')
+  const firstP = document.createElement('p')
+  const secondP = document.createElement('p')
+  const thirdP = document.createElement('p')
+  const expand = document.createElement('span')
+
+  outermost.classList.add('article')
+  dateElement.classList.add('date')
+  expand.classList.add('expandButton')
+
+  titleElement.textContent = data.title
+  dateElement.textContent = data.date
+  firstP.textContent = data.firstParagraph
+  secondP.textContent = data.secondParagraph
+  thirdP.textContent = data.thirdParagraph
+  expand.textContent = "TOGGLE"
+    ;
+  [titleElement, dateElement, firstP, secondP, thirdP, expand].forEach(elem => {
+    outermost.appendChild(elem)
+  })
+
+  expand.addEventListener('click', event => {
+    outermost.classList.toggle('article-open')
+  })
+
+  return outermost
+}
+
+const targetElement = document.querySelector('.articles')
+
+data.forEach(articleData => {
+  targetElement.appendChild(expandable(articleData))
+})
