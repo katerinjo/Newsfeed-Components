@@ -112,3 +112,25 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+
+function expandable(data) {
+  const outermost = document.createElement('div')
+  const titleElement = document.createElement('h2')
+  const dateElement = document.createElement('p')
+  const firstP = document.createElement('p')
+  const secondP = document.createElement('p')
+  const thirdP = document.createElement('p')
+  const expand = document.createElement('span')
+
+  outermost.classList.add('article')
+  date.classList.add('date')
+  expand.classList.add('expandButton')
+
+  titleElement.textContent = data.title
+
+  [titleElement, dateElement, firstP, secondP, thirdP, expand].forEach(elem => {
+    outermost.appendChild(elem)
+  })
+
+  return outermost
+}
