@@ -136,5 +136,9 @@ function expandable(data) {
     outermost.appendChild(elem)
   })
 
+  expand.addEventListener('click', event => {
+    outermost.classList.toggle('article-open')
+  })
+
   return outermost
 }
